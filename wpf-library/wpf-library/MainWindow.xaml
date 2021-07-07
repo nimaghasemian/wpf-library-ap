@@ -27,7 +27,7 @@
                     <Label Grid.Row="1" Content="Welcom" Margin="141,19.6,170.4,15" FontWeight="Bold" FontSize="48" Grid.Column="1"/>
                     <Label Grid.Row="2" Content="Choose your part:" Margin="119,37,135.4,19.6" FontSize="30" Grid.Column="1"/>
 
-                    <Button Grid.Row="3" Content="User" Margin="119,54.4,140.4,6.2" Grid.Column="1"/>
+                    <Button Grid.Row="3" Content="User" Margin="119,54.4,140.4,6.2" Grid.Column="1" Click="Button_Click_3"/>
 
                     <Button Grid.Row="4" Content="Manager" Margin="119,5.8,266.4,67.8" Grid.Column="1"/>
                     <Button Grid.Row="4" Content="Employee" Margin="250,5.8,140.4,67.8" Grid.Column="1"/>

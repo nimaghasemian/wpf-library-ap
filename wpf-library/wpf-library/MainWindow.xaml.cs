@@ -41,5 +41,10 @@ namespace wpf_library
 		{
             this.Close();
 		}
+
+		private void Button_Click_3(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }
