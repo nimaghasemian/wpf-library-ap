@@ -24,5 +24,22 @@ namespace wpf_library
         {
             InitializeComponent();
         }
-    }
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+            
+		}
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+            Sign_in_edit_info signpage = new Sign_in_edit_info();
+            signpage.Show();
+            this.Close();
+		}
+
+		private void Button_Click_2(object sender, RoutedEventArgs e)
+		{
+            this.Close();
+		}
+	}
 }
