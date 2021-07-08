@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_library"
         mc:Ignorable="d"
-        Title="Billing_Page" Height="550" Width="650">
+        Title="Billing Page" Height="550" Width="650">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>

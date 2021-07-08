@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_library"
         mc:Ignorable="d"
-        Title="Sign_in_edit_info" Height="450" Width="800">
+        Title="Information" Height="450" Width="800">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
