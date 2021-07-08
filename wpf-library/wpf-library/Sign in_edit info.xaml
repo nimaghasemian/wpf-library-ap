@@ -15,7 +15,7 @@
                 <RowDefinition Height=".7*"/>
             </Grid.RowDefinitions>
             <Button Grid.Row="0" Content="Back" Margin="10,0,723.6,10" />
-            <Label x:Name="lbl_siginin_title" Grid.Row="1" Content="Sign in" FontSize="55" FontWeight="Bold" FontFamily="Showcard Gothic" Margin="294,0,283.6,242.2" Grid.RowSpan="2"/>
+            <Label x:Name="lbl_siginin_title" Content="SIGN UP" FontSize="55" FontWeight="Bold" FontFamily="Showcard Gothic" Margin="277,39,278.2,0" Grid.RowSpan="2"/>
 
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
