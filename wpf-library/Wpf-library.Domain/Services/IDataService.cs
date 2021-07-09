@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wpf_library.Services
+namespace Wpf_library.Domain.Services
 {
     public interface IDataService<T>
     {

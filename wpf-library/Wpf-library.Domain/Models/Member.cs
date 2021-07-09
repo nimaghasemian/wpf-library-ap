@@ -12,7 +12,7 @@ namespace Wpf_library.Domain.Models
         public IEnumerable<BookTransaction> bookTransactions;
         public DateTime MemberShipDate { get; set; }
         public long Balance { get; set; }
-        public DateTime LastePayDate { get; set; }
+        public DateTime LastPayDate { get; set; }
 
 
     }

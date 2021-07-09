@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wpf_library.Domain.Models
 {
-   public class BookTransaction
+   public class BookTransaction:BaseEntity
     {
         public long Id { get; set; }
         public Book RentedBook { get; set; }

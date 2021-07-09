@@ -4,20 +4,19 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Wpf_library.Domain.Models;
 
-namespace wpf_library.EntityFramework
+namespace Wpf_library.EntityFramework
 {
     public class WpfLibraryDBContext:DbContext
     {
+        public WpfLibraryDBContext(DbContextOptions options) : base(options)
+        {
+        }
+
         DbSet<Member> Members { get; set; }
         DbSet<Employee> Employees { get; set; }
         DbSet<Manager> Managers { get; set; }
         DbSet<Book> Books { get; set; }
         DbSet<BookTransaction> BookTransactions { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("server=localhost\\SQLEXPRESS;Database=Library;Trusted_Connection=True;");
-            base.OnConfiguring(optionsBuilder);
-        }
     }
 }

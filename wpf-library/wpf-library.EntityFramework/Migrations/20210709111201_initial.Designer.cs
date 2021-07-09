@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using wpf_library.EntityFramework;
+using Wpf_library.EntityFramework;
 
-namespace wpf_library.EntityFramework.Migrations
+namespace Wpf_library.EntityFramework.Migrations
 {
     [DbContext(typeof(WpfLibraryDBContext))]
-    [Migration("20210708134653_initial")]
+    [Migration("20210709111201_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -147,7 +147,7 @@ namespace wpf_library.EntityFramework.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("LastePayDate")
+                    b.Property<DateTime>("LastPayDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("MemberShipDate")
