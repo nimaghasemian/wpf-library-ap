@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace wpf_library {
+namespace Wpf_library {
     
     
     /// <summary>
