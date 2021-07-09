@@ -15,26 +15,13 @@ using System.Windows.Shapes;
 namespace wpf_library
 {
 	/// <summary>
-	/// Interaction logic for Sign_in_edit_info.xaml
+	/// Interaction logic for AddBookPage.xaml
 	/// </summary>
-	public partial class Sign_in_edit_info : Window
+	public partial class AddBookPage : Window
 	{
-		public Sign_in_edit_info(string tilte="Sign in")
+		public AddBookPage()
 		{
 			InitializeComponent();
-			lbl_siginin_title.Content = tilte;
-		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-			Billing_Page billing_Page = new Billing_Page();
-			billing_Page.Show();
-			this.Close();
-		}
-
-		private void Button_Click_1(object sender, RoutedEventArgs e)
-		{
-			
 		}
 	}
 }

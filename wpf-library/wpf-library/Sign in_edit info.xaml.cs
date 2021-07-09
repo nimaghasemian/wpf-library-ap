@@ -45,5 +45,10 @@ namespace wpf_library
 				imgPhoto.Source = new BitmapImage(new Uri(op.FileName));  
 			}  
 		}
+
+		private void Button_Click_2(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

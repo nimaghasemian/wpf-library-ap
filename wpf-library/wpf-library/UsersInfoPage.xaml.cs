@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace wpf_library
 {
 	/// <summary>
-	/// Interaction logic for Billingpage.xaml
+	/// Interaction logic for UsersInfoPage.xaml
 	/// </summary>
-	public partial class Billingpage : Window
+	public partial class UsersInfoPage : Window
 	{
-		public Billingpage()
+		public UsersInfoPage()
 		{
 			InitializeComponent();
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
 		}
 	}
 }
