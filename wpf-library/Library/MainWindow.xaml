@@ -23,7 +23,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="0" Content="Exit" Margin="471,0,0.4,86.4" Grid.Column="1" Click="Button_Click_2"/>
+                    <Button x:Name="btn_welcom_exit" Grid.Row="0" Content="Exit" Margin="471,0,0.4,86.4" Grid.Column="1" Click="btn_welcom_exit_Click"/>
                     <Label Grid.Row="1" Content="Welcom" Margin="141,19.6,170.4,15" FontWeight="Bold" FontSize="48" Grid.Column="1"/>
                     <Label Grid.Row="2" Content="Choose your part:" Margin="119,37,135.4,19.6" FontSize="30" Grid.Column="1"/>
 
@@ -48,7 +48,7 @@
                     </Grid.RowDefinitions>
 
                     <Button Grid.Row="0" Content="Back" Margin="10,10,469.4,57.6"/>
-                    <Button Grid.Row="0" Content="Sign in" Margin="417,10,10.4,41.4" Background="#FFC2EAA5" FontSize="24" FontWeight="Bold" BorderBrush="#FF0C0707" Click="Button_Click_1"/>
+                    <Button x:Name="btn_signin" Grid.Row="0" Content="Sign in" Margin="417,10,10.4,41.4" Background="#FFC2EAA5" FontSize="24" FontWeight="Bold" BorderBrush="#FF0C0707" Click="btn_signin_Click"/>
                     <Label Grid.Row="1" Content="Login" Margin="184,51.2,171.4,57.2" FontSize="55" FontWeight="Bold" FontFamily="Showcard Gothic"/>
                     <Label Grid.Row="2" Content="Username:" Margin="147,20.6,317.4,47.8"/>
                     <TextBox Grid.Row="2" Text="" Margin="150,46.8,161.4,27.8"/>

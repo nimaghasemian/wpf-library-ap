@@ -12,26 +12,56 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AddBookPage.xaml.cs">
+      <DependentUpon>AddBookPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Billing Page.xaml.cs">
       <DependentUpon>Billing Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Employee.xaml.cs">
+      <DependentUpon>Employee.xaml</DependentUpon>
     </Compile>
     <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Manager.xaml.cs">
+      <DependentUpon>Manager.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Sign in_edit info.xaml.cs">
       <DependentUpon>Sign in_edit info.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="User.xaml.cs">
+      <DependentUpon>User.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="UsersInfoPage.xaml.cs">
+      <DependentUpon>UsersInfoPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="AddBookPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Billing Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Manager.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Sign in_edit info.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="User.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UsersInfoPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
