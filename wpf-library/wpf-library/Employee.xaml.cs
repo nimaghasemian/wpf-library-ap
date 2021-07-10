@@ -41,8 +41,8 @@ namespace wpf_library
 
 		private void btn_employee_editinfo_Click(object sender, RoutedEventArgs e)
 		{
-			UsersInfoPage usersInfoPage = new UsersInfoPage();
-			usersInfoPage.Show();
+			Sign_in_edit_info sign_In_Edit_Info = new Sign_in_edit_info("Edit info");
+			sign_In_Edit_Info.Show();
 		}
 
 		private void btn_employee_exit_Click(object sender, RoutedEventArgs e)

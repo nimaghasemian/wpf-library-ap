@@ -39,9 +39,48 @@ namespace wpf_library
             this.Close();
 		}
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
+		private void btn_welcom_user_Click(object sender, RoutedEventArgs e)
+		{
+            //** set person type to user
 
-        }
-    }
+            TabControl_welcom.SelectedItem = Tab_Login;
+            btn_signin.Visibility = Visibility.Visible;
+		}
+
+		private void btn_welcom_manager_Click(object sender, RoutedEventArgs e)
+		{
+            //** set person type to manager
+
+            TabControl_welcom.SelectedItem = Tab_Login;
+            btn_signin.Visibility = Visibility.Hidden;
+		}
+
+		private void btn_welcom_employee_Click(object sender, RoutedEventArgs e)
+		{
+            //** set person type to employee
+
+            TabControl_welcom.SelectedItem = Tab_Login;
+            btn_signin.Visibility = Visibility.Hidden;
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+            TabControl_welcom.SelectedItem = Tab_welcom;
+		}
+
+		private void btn_login_Click(object sender, RoutedEventArgs e)
+		{
+            //** check the password and email
+
+
+            //** open one of these with regard to person type
+
+            //** 1.
+
+            //** 2.Manager manager = new Manager();
+
+            //** 3.Employee employee = new Employee();
+
+		}
+	}
 }

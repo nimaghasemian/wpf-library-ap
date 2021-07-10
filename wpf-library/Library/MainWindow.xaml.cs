@@ -39,9 +39,19 @@ namespace wpf_library
             this.Close();
 		}
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
+		private void Button_Click_3(object sender, RoutedEventArgs e)
+		{
+            
+		}
 
-        }
-    }
+		private void btn_welcom_manager_Click(object sender, RoutedEventArgs e)
+		{
+            
+		}
+
+		private void btn_welcom_empolyee_Click(object sender, RoutedEventArgs e)
+		{
+           
+		}
+	}
 }

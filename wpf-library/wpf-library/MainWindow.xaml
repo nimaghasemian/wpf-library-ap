@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Welcom" Height="700" Width="550">
     <Grid>
-        <TabControl>
-            <TabItem>
+        <TabControl x:Name="TabControl_welcom">
+            <TabItem x:Name="Tab_welcom">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="15*"/>
@@ -27,16 +27,16 @@
                     <Label Grid.Row="1" Content="Welcom" Margin="141,19.6,170.4,15" FontWeight="Bold" FontSize="48" Grid.Column="1"/>
                     <Label Grid.Row="2" Content="Choose your part:" Margin="119,37,135.4,19.6" FontSize="30" Grid.Column="1"/>
 
-                    <Button Grid.Row="3" Content="User" Margin="119,54.4,140.4,6.2" Grid.Column="1" Click="Button_Click_3"/>
+                    <Button x:Name="btn_welcom_user" Grid.Row="3" Content="User" Margin="119,54.4,140.4,6.2" Grid.Column="1" Click="btn_welcom_user_Click"/>
 
-                    <Button Grid.Row="4" Content="Manager" Margin="119,5.8,266.4,67.8" Grid.Column="1"/>
-                    <Button Grid.Row="4" Content="Employee" Margin="250,5.8,140.4,67.8" Grid.Column="1"/>
+                    <Button x:Name="btn_welcom_manager" Grid.Row="4" Content="Manager" Margin="119,5.8,266.4,67.8" Grid.Column="1" Click="btn_welcom_manager_Click"/>
+                    <Button x:Name="btn_welcom_employee" Grid.Row="4" Content="Employee" Margin="250,5.8,140.4,67.8" Grid.Column="1" Click="btn_welcom_employee_Click"/>
 
                     <Label Grid.Row="5" Content="Created by Niam and Abolfazl" Margin="0,84.2,347.4,0.4" Grid.ColumnSpan="2"/>
                     <Button Grid.Row="5" Content="About us" Margin="448,85.2,0.4,0.4" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="1"/>
                 </Grid>
             </TabItem>
-            <TabItem>
+            <TabItem x:Name="Tab_Login">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -47,17 +47,17 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="0" Content="Back" Margin="10,10,469.4,57.6"/>
+                    <Button Grid.Row="0" Content="Back" Margin="10,10,469.4,57.6" Click="Button_Click"/>
                     <Button x:Name="btn_signin" Grid.Row="0" Content="Sign in" Margin="417,10,10.4,41.4" Background="#FFC2EAA5" FontSize="24" FontWeight="Bold" BorderBrush="#FF0C0707" Click="btn_signin_Click"/>
-                    <Label Grid.Row="1" Content="Login" Margin="184,51.2,171.4,57.2" FontSize="55" FontWeight="Bold" FontFamily="Showcard Gothic"/>
-                    <Label Grid.Row="2" Content="Username:" Margin="147,20.6,317.4,47.8"/>
-                    <TextBox Grid.Row="2" Text="" Margin="150,46.8,161.4,27.8"/>
-                    <Label Grid.Row="2" Margin="150,76.8,161.4,6.8"/>
-                    <Label Grid.Row="3" Content="Password" Margin="147,0,322.4,68.4"/>
-                    <PasswordBox Grid.Row="3" Margin="150,31.2,161.4,44.4" />
-                    <Label Grid.Row="3" Margin="150,62,161.4,16.4"/>
+                    <Label Grid.Row="1" Content="Login" Margin="177,51.2,178.4,57.2" FontSize="55" FontWeight="Bold" FontFamily="Showcard Gothic"/>
+                    <Label Grid.Row="2" Content="Username:" Margin="151,20.8,313.4,47.8"/>
+                    <TextBox Grid.Row="2" Text="" Margin="154,46.8,157.4,27.8"/>
+                    <Label Grid.Row="2" Margin="154,76.8,157.4,6.8"/>
+                    <Label Grid.Row="3" Content="Password" Margin="151,0.2,318.4,68.4"/>
+                    <PasswordBox Grid.Row="3" Margin="154,31.2,157.4,44.4" />
+                    <Label Grid.Row="3" Margin="154,62.2,157.4,16.4"/>
 
-                    <Button Grid.Row="3" Content="Login" Margin="184,101.2,209.4,9.8" Grid.RowSpan="2"/>
+                    <Button x:Name="btn_login" Grid.Row="3" Content="Login" Margin="188,101.2,205.4,9.8" Grid.RowSpan="2" Click="btn_login_Click"/>
                     <CheckBox Grid.Row="5" Content="Remeber me" Margin="160,5.2,281.4,75.4"/>
                     <Button Grid.Row="4" Content="Forget password?" Margin="262,48.6,161.4,76.4" Grid.RowSpan="2" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 </Grid>

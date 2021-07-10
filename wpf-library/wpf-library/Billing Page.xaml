@@ -41,7 +41,7 @@
         <TextBox Grid.Row="5" Margin="119,12.2,275.2,41.4"/>
         <Label Grid.Row="5" Margin="119,47.2,275.2,10.4"/>
 
-        <Button Grid.Row="6" Content="Pay ?$" Margin="110,20.6,325.2,23.8"/>
-        <Button Grid.Row="6" Content="Cancel" Margin="358,30.6,162.2,23.8"/>
+        <Button x:Name="btn_bank_pay" Grid.Row="6" Content="Pay ?$" Margin="110,20.6,325.2,23.8" Click="btn_bank_pay_Click"/>
+        <Button x:Name="btn_bank_cancel" Grid.Row="6" Content="Cancel" Margin="358,30.6,162.2,23.8" Click="btn_bank_cancel_Click"/>
     </Grid>
 </Window>

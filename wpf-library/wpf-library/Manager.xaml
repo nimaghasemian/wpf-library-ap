@@ -38,7 +38,7 @@
                         </ItemsControl>
                     </ScrollViewer>
 
-                    <Button Grid.Row="1" Content="Add new employee" Margin="76,16.4,276.6,20"/>
+                    <Button x:Name="btn_manager_addemployee" Grid.Row="1" Content="Add new employee" Margin="76,16.4,276.6,20" Click="btn_manager_addemployee_Click"/>
                     <Button Grid.Row="1" Content="Pay salaries" Margin="310,16.4,112.6,20"/>
                 </Grid>
             </TabItem>
@@ -59,7 +59,7 @@
                         </ItemsControl>
                     </ScrollViewer>
 
-                    <Button Grid.Row="1" Content="Add new Books" Margin="176,13.4,207.6,25" Click="Button_Click"/>
+                    <Button x:Name="btn_manager_addbook" Grid.Row="1" Content="Add new Books" Margin="176,13.4,207.6,25" Click="btn_manager_addbook_Click"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Tab_manager_cash">
@@ -70,10 +70,10 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0" Content="Your total money is ? $" Margin="88,88,84.6,46" FontSize="36"/>
+                    <Label Grid.Row="0" Content="Your total money is ? $" HorizontalContentAlignment="Center" Margin="51,98,46.6,36" FontSize="36"/>
                     <Label Grid.Row="1" Content="How much money" Margin="105,47,341.6,24.4"/>
                     <TextBox Grid.Row="1" Margin="225,47,132.6,24.4" FontSize="16"/>
-                    <Button Grid.Row="2" Content="Add ?$" Margin="169,0.6,209.6,54"/>
+                    <Button Grid.Row="2" Content="Add ?$" HorizontalContentAlignment="Center" Margin="169,0.6,209.6,54"/>
                     <Label Grid.Row="2" Margin="169,50.6,209.6,25"/>
                 </Grid>
             </TabItem>

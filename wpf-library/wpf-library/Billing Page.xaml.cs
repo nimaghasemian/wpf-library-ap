@@ -19,9 +19,46 @@ namespace wpf_library
 	/// </summary>
 	public partial class Billing_Page : Window
 	{
-		public Billing_Page()
+		public double Money { get; set; }
+
+		public bool Is_user_siginin { get; set; }
+		
+		public Billing_Page(double money,bool user_signin)
 		{
 			InitializeComponent();
+			this.Money = money;
+			Is_user_siginin = user_signin;
+			btn_bank_pay.Content = $"Pay {Money}$";
+		}
+
+		private void btn_bank_pay_Click(object sender, RoutedEventArgs e)
+		{
+			//** check fields 
+
+			if(Is_user_siginin == true)
+			{
+				User user = new User();
+				user.Show();
+				this.Close();
+			}
+			else
+			{
+				this.Close();
+			}
+		}
+
+		private void btn_bank_cancel_Click(object sender, RoutedEventArgs e)
+		{
+			if(Is_user_siginin == true)
+			{
+				MainWindow mainWindow = new MainWindow();
+				mainWindow.Show();
+				this.Close();
+			}
+			else
+			{
+				this.Close();
+			}
 		}
 	}
 }
