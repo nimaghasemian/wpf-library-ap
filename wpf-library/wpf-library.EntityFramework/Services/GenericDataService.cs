@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Wpf_library.EntityFramework.Services
 {
-    public class GenericDataService<T> : IDataService<T> where T:class,BaseEntity
+    public abstract class GenericDataService<T> : IDataService<T> where T:class,BaseEntity
     {
-        private readonly WpfLibraryDbContextFactory _contextFactory;
+        protected readonly WpfLibraryDbContextFactory _contextFactory;
 
         public GenericDataService(WpfLibraryDbContextFactory contextFactory)
         {

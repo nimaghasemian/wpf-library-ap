@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>wpf_library.EntityFramework</RootNamespace>
+    <RootNamespace>Wpf_library.EntityFramework</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

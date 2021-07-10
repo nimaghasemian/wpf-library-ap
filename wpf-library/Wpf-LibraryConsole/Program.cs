@@ -10,7 +10,7 @@ namespace Wpf_library.ConsoleTest
     {
         static void Main(string[] args)
         {
-            IDataService<Member> memberService = new GenericDataService<Member>(new WpfLibraryDbContextFactory());
+            IDataService<Member> memberService = new UserDataService<Member>(new WpfLibraryDbContextFactory());
             memberService.Create(new Member()
             { Name = "GULAM",
               Email = "GULAM@GMAIL>COM",
