@@ -20,22 +20,42 @@ namespace wpf_library
 	/// </summary>
 	public partial class Sign_in_edit_info : Window
 	{
+		public string title_page { get; set; }
 		public Sign_in_edit_info(string tilte="Sign in")
 		{
 			InitializeComponent();
-			lbl_siginin_title.Content = tilte;
+			title_page = tilte;
+			
+			if(title_page=="Sign in")
+			{
+				lbl_siginin_title.Content = tilte;
+				btn_signPage_billing.Content = "Go to Billing page";
+			}
+			if(title_page=="Edit info")
+			{
+				lbl_siginin_title.Content = "Edit information";
+				btn_signPage_billing.Content = "Edit";
+			}
+			if(title_page=="Add Employee")
+			{
+				lbl_siginin_title.Content = title_page;
+				btn_signPage_billing.Content = "Add";
+			}
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void btn_signPage_billing_Click(object sender, RoutedEventArgs e)
 		{
-			Billing_Page billing_Page = new Billing_Page();
+			//** check the info for exeptions and save them in db
+
+
+			Billing_Page billing_Page = new Billing_Page(5,true);
 			billing_Page.Show();
 			this.Close();
 		}
 
-		private void Button_Click_1(object sender, RoutedEventArgs e)
+		private void btn_browse_Click(object sender, RoutedEventArgs e)
 		{
-			OpenFileDialog op = new OpenFileDialog();  
+			OpenFileDialog op = new OpenFileDialog();
 			op.Title = "Select a picture";  
 			op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +  
 			"JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +  
@@ -46,9 +66,18 @@ namespace wpf_library
 			}  
 		}
 
-		private void Button_Click_2(object sender, RoutedEventArgs e)
+		private void btn_signPage_back_Click(object sender, RoutedEventArgs e)
 		{
-			this.Close();
+			if(title_page=="Sign in")
+			{
+				MainWindow mainWindow = new MainWindow();
+				mainWindow.Show();
+				this.Close();
+			}
+			else
+			{
+				this.Close();
+			}
 		}
 	}
 }

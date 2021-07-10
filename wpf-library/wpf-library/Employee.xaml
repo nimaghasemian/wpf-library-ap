@@ -20,7 +20,7 @@
 
         <TabControl x:Name="TabControl_employee" Grid.Column="1" FontSize="20" FontFamily="Arial">
             <TabItem x:Name="Tab_employee_welcom">
-                <Label Content="Welcome" Margin="118,152,99.8,187" FontSize="40" FontWeight="Bold"/>
+                <Label Content="Welcome" HorizontalContentAlignment="Center" Margin="51,179,38.8,160" FontSize="40" FontWeight="Bold"/>
             </TabItem>
             
             <TabItem x:Name="Tab_employee_books">
@@ -131,7 +131,7 @@
             </TabItem>
             
             <TabItem x:Name="Tab_employee_cart">
-                <Label Content="You have totally ? $" Margin="127,155,142.8,182" FontSize="35" FontWeight="Bold" FontFamily="Bauhaus 93"/>
+                <Label Content="You have totally ? $" HorizontalContentAlignment="Center" Margin="28,149,39.8,188" FontSize="35" FontWeight="Bold" FontFamily="Bauhaus 93"/>
             </TabItem>
         </TabControl>
     </Grid>

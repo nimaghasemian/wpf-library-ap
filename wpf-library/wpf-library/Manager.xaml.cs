@@ -46,7 +46,13 @@ namespace wpf_library
 			this.Close();
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void btn_manager_addemployee_Click(object sender, RoutedEventArgs e)
+		{
+			Sign_in_edit_info sign_In_Edit_Info = new Sign_in_edit_info("Add Employee");
+			sign_In_Edit_Info.Show();
+		}
+
+		private void btn_manager_addbook_Click(object sender, RoutedEventArgs e)
 		{
 			AddBookPage addBookPage = new AddBookPage();
 			addBookPage.Show();

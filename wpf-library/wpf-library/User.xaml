@@ -21,7 +21,7 @@
 
         <TabControl x:Name="TabControl_user" Grid.ColumnSpan="2" Margin="183,-3,-0.4,3">
             <TabItem x:Name="Tab_user_welcom">
-                <Label Content="Welcom " Margin="88,152,156.8,182" FontSize="40" FontFamily="Arial"/>
+                <Label Content="Welcom " HorizontalContentAlignment="Center" Margin="48,174,53.6,168" FontSize="40" FontFamily="Arial"/>
             </TabItem>
 
             <TabItem x:Name="Tab_user_allBooks">
@@ -105,7 +105,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0" Content="Total :" FontSize="35" Margin="148,120,170.6,24"/>
+                    <Label Grid.Row="0" Content="Total :" HorizontalContentAlignment="Center" FontSize="35" Margin="92,117,156.6,27"/>
 
                     <TextBox Grid.Row="1" Margin="92,53,348.6,120" FontSize="16"/>
                     <Button Grid.Row="1" Content="Add to cart" BorderThickness="2.5" Margin="306,33,115.6,108" FontSize="20" Background="{x:Null}"/>
