@@ -9,7 +9,7 @@ namespace Wpf_library.Domain.Models
 {
     public class Member : BasePerson
     {
-        public IEnumerable<BookTransaction> bookTransactions;
+        public ICollection<BookTransaction> bookTransactions;
         public DateTime MemberShipDate { get; set; }
         public long Balance { get; set; }
         public DateTime LastPayDate { get; set; }
