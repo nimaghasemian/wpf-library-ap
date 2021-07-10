@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Wpf_library.Domain.Models;
+using Wpf_library.EntityFramework.Services;
 
 namespace Library
 {
@@ -17,8 +19,14 @@ namespace Library
     /// </summary>
     public partial class EmployeeView : Window
     {
-        public EmployeeView()
+		private readonly Employee activeEmployee;
+		private readonly BookDataService bookService = new BookDataService(new Wpf_library.EntityFramework.WpfLibraryDbContextFactory());
+		private readonly UserDataService<Member> memberService = new UserDataService<Member>(new Wpf_library.EntityFramework.WpfLibraryDbContextFactory());
+		private readonly UserDataService<Employee> employeeService = new UserDataService<Employee>(new Wpf_library.EntityFramework.WpfLibraryDbContextFactory());
+
+        public EmployeeView(Wpf_library.Domain.Models.Employee employee)
         {
+			this.activeEmployee = employee;
             InitializeComponent();
         }
 		private void btn_employee_books_Click(object sender, RoutedEventArgs e)

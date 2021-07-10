@@ -17,7 +17,7 @@ namespace Library
     /// </summary>
     public partial class MemberView : Window
     {
-        public MemberView()
+        public MemberView(Wpf_library.Domain.Models.Member member)
         {
             InitializeComponent();
         }

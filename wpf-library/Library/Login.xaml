@@ -9,19 +9,21 @@
     <Grid>
         <Grid>
             <Label Content="LOG IN&#xA;" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="45" Height="65"/>
-            <ComboBox Name="userTypeInput" HorizontalAlignment="Center" VerticalAlignment="Top" Width="203" SelectionChanged="ComboBox_SelectionChanged" Margin="0,159,0,0" >
-                <ComboBoxItem Tag="A" IsSelected="True" Content="Manager"/>
+            <ComboBox SelectedIndex="0" Name="userTypeInput" HorizontalAlignment="Center" VerticalAlignment="Top" Width="203" SelectionChanged="ComboBox_SelectionChanged" Margin="0,159,0,0" >
+                <ComboBoxItem Visibility="Collapsed">Select your role...</ComboBoxItem>
+                <ComboBoxItem Tag="A" Content="Manager"/>
                 <ComboBoxItem Tag="E" Content="Employee"/>
                 <ComboBoxItem Tag="M" Content="Member"/>
             </ComboBox>
             <TextBox Name="emailInput" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="203" Height="22"/>
             <PasswordBox Name="passwordInput" HorizontalAlignment="Center" Margin="0,274,0,0" VerticalAlignment="Top" Width="203" Height="22"/>
             <Button Content="LOG IN" HorizontalAlignment="Center" Margin="0,322,0,0" VerticalAlignment="Top" Width="89" Height="26" Click="Button_Click"/>
-            <Button Content="Become a Member" HorizontalAlignment="Center" Margin="0,368,0,0" VerticalAlignment="Top" Width="152" Height="27" Click="Button_Click_1"/>
-            <Label Content="Select your role&#xD;&#xA;" HorizontalAlignment="Left" Margin="184,128,0,0" VerticalAlignment="Top"/>
+            <Button  Name="joinButton" Visibility="Hidden" Content="Become a Member" HorizontalAlignment="Center" Margin="0,368,0,0" VerticalAlignment="Top" Width="152" Height="27" Click="Button_Click_1"/>
             <Label Content="Password:&#xA;" HorizontalAlignment="Left" Margin="73,272,0,0" VerticalAlignment="Top" Height="26"/>
             <Label Content="Email:" HorizontalAlignment="Left" Margin="73,0,0,0" VerticalAlignment="Center"/>
-            <TextBlock HorizontalAlignment="Center" Margin="0,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="65" Width="275"/>
+            <Label Name="passwordErrorLabel" Content="" HorizontalAlignment="Left" Margin="135,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,0.302" Width="203" FontSize="10" Foreground="Red"/>
+            <Label Name="emailErrorLabel" Content="" HorizontalAlignment="Left" Margin="135,248,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,0.302" Width="203" FontSize="10" Foreground="Red"/>
+
         </Grid>
     </Grid>
 </Window>
