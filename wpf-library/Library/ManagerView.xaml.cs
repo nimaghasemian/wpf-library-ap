@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,16 +10,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace wpf_library
+namespace Library
 {
-	/// <summary>
-	/// Interaction logic for AddBookPage.xaml
-	/// </summary>
-	public partial class AddBookPage : Window
-	{
-		public AddBookPage()
-		{
-			InitializeComponent();
-		}
-	}
+    /// <summary>
+    /// Interaction logic for ManagerView.xaml
+    /// </summary>
+    public partial class ManagerView : Window
+    {
+        public ManagerView()
+        {
+            InitializeComponent();
+        }
+    }
 }

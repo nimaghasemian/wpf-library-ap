@@ -5,7 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-
 namespace Library
 {
     /// <summary>
@@ -13,5 +12,12 @@ namespace Library
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Window window = new Login();
+            window.Show();
+            base.OnStartup(e);
+        }
+
     }
 }

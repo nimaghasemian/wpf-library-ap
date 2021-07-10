@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_library"
         mc:Ignorable="d"
-        Title="Welcom" Height="700" Width="550">
+        Title="Welcome" Height="700" Width="550">
     <Grid>
         <TabControl x:Name="TabControl_welcom">
             <TabItem x:Name="Tab_welcom">

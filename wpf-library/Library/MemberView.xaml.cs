@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,17 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace wpf_library
+namespace Library
 {
-	/// <summary>
-	/// Interaction logic for User.xaml
-	/// </summary>
-	public partial class User : Window
-	{
-		public User()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// Interaction logic for MemberView.xaml
+    /// </summary>
+    public partial class MemberView : Window
+    {
+        public MemberView()
+        {
+            InitializeComponent();
+        }
 
 		private void btn_user_allbooks_Click(object sender, RoutedEventArgs e)
 		{
@@ -46,13 +44,15 @@ namespace wpf_library
 
 		private void btn_user_editinfo_Click(object sender, RoutedEventArgs e)
 		{
-			Sign_in_edit_info sign_In_Edit_Info = new Sign_in_edit_info();
-			sign_In_Edit_Info.Show();
+
 		}
 
 		private void btn_user_exit_Click(object sender, RoutedEventArgs e)
 		{
+			Window login = new Login();
+			login.Show();
 			this.Close();
 		}
 	}
 }
+

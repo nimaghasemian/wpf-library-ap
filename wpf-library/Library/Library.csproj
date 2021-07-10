@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Wpf-library.Domain\Wpf-library.Domain.csproj" />
-    <ProjectReference Include="..\wpf-library.EntityFramework\Wpf-library.EntityFramework.csproj" />
+    <ProjectReference Include="..\Wpf-library.EntityFramework\Wpf-library.EntityFramework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,13 +17,6 @@
     </Compile>
     <Compile Update="Billing Page.xaml.cs">
       <DependentUpon>Billing Page.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Employee.xaml.cs">
-      <DependentUpon>Employee.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="MainWindow.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Update="Manager.xaml.cs">
       <DependentUpon>Manager.xaml</DependentUpon>
@@ -40,28 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="AddBookPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Billing Page.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Employee.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Manager.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Sign in_edit info.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="User.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UsersInfoPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

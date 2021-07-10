@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,18 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace wpf_library
+namespace Library
 {
-	/// <summary>
-	/// Interaction logic for Employee.xaml
-	/// </summary>
-	public partial class Employee : Window
-	{
-		public Employee()
-		{
-			InitializeComponent();
-		}
-
+    /// <summary>
+    /// Interaction logic for EmployeeView.xaml
+    /// </summary>
+    public partial class EmployeeView : Window
+    {
+        public EmployeeView()
+        {
+            InitializeComponent();
+        }
 		private void btn_employee_books_Click(object sender, RoutedEventArgs e)
 		{
 			TabControl_employee.SelectedItem = Tab_employee_books;
@@ -41,14 +38,13 @@ namespace wpf_library
 
 		private void btn_employee_editinfo_Click(object sender, RoutedEventArgs e)
 		{
-			UsersInfoPage usersInfoPage = new UsersInfoPage();
-			usersInfoPage.Show();
+
 		}
 
 		private void btn_employee_exit_Click(object sender, RoutedEventArgs e)
 		{
-			MainWindow mainWindow = new MainWindow();
-			mainWindow.Show();
+			Window login = new Login();
+			login.Show();
 			this.Close();
 		}
 	}
