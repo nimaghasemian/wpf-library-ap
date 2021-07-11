@@ -10,13 +10,13 @@ namespace Library.Validators
     {
         public PasswordValidator()
         {
-            RuleFor(password => password).Cascade(CascadeMode.Stop).NotNull().WithMessage("{PropertyName} is required")
-                .Must(BeValidPassword).WithMessage("Must contain one uppercase and should be between 8-32 charecter");
+            RuleFor(password => password).Cascade(CascadeMode.Stop).NotEmpty().WithMessage("Password is required")
+                .Must(BeValidPassword).WithMessage("Password must contain atleast one uppercase and should be between 8-32 charecters");
         }
 
         private bool BeValidPassword(string password)
         {
-            Regex pass = new Regex(@"^(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,32}$");
+            Regex pass = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,32}$");
             Match confirm = pass.Match(password);
             return confirm.Success;
         }

@@ -12,13 +12,13 @@ using System.Text.RegularExpressions;
 
 namespace Library.Validators
 {
-    public class PersonValidator<T>:AbstractValidator<BasePerson> where T:BasePerson
+    public class MemberValidator:AbstractValidator<Member> 
     {
-        public PersonValidator()
+        public MemberValidator()
         {
 
             RuleFor(m => m.Name).SetValidator(new NameValidator());
-            RuleFor(m => m.Email).SetValidator(new EmailValidator());
+            RuleFor(m => m.Email).SetValidator(new EmailValidator<Member>());
             RuleFor(m => m.Password).SetValidator(new PasswordValidator());
             RuleFor(m => m.PhoneNumber).SetValidator(new PhoneNumberValidator());
         }

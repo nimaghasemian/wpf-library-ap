@@ -13,6 +13,7 @@ namespace Wpf_library.Domain.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public bool isLoggedIn { get; set; }
+        public long Balance { get; set; }
         public long Id { get; set; }
     }
 }

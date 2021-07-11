@@ -6,6 +6,6 @@ namespace Wpf_library.Domain.Models
 {
     public class Manager:BasePerson
     {
-        public long LibBalance { get; set; }
+        public long LibBalance { get { return LibBalance; } set { LibBalance = base.Balance; } }
     }
 }

@@ -8,7 +8,7 @@ namespace Library.Validators
     {
         public PhoneNumberValidator()
         {
-            RuleFor(phoneNumber => phoneNumber).Cascade(CascadeMode.Stop).NotNull().WithMessage("{PropertyName} is required")
+            RuleFor(phoneNumber => phoneNumber).Cascade(CascadeMode.Stop).NotEmpty().WithMessage("Phone number is required")
                 .Must(BeValidPhoneNumber).WithMessage("Enter a valid phone number");
         }
         private bool BeValidPhoneNumber(string phonenumber)

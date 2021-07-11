@@ -10,9 +10,9 @@ namespace Library.Validators
     {
         public NameValidator()
         {
-            RuleFor(name => name).Cascade(CascadeMode.Stop).NotNull().WithMessage("{PropertyName} is required")
-               .Length(4, 50).WithMessage("{PropertyName} Length should be of length 4 to 50")
-               .Must(beValidName).WithMessage("{ProeprtyName} contains invalid characters");
+            RuleFor(name => name).Cascade(CascadeMode.Stop).NotEmpty().WithMessage("Name is required")
+               .Length(4, 50).WithMessage("Name Length should be of length 4 to 50")
+               .Must(beValidName).WithMessage("Name contains invalid characters");
         }
 
         private bool beValidName(string name)

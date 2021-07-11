@@ -120,8 +120,9 @@ namespace Library
         {
             
             Window signUpWindow = new SignUp();
-            signUpWindow.Show();
             this.Close();
+            signUpWindow.Show();
+            
         }
     }
 }
