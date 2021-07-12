@@ -10,7 +10,7 @@ using Wpf_library.EntityFramework;
 namespace Wpf_library.EntityFramework.Migrations
 {
     [DbContext(typeof(WpfLibraryDBContext))]
-    [Migration("20210712022452_initial")]
+    [Migration("20210712191004_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,10 +55,10 @@ namespace Wpf_library.EntityFramework.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("RentedBookId")
+                    b.Property<long>("BookID")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("RentingMemberId")
+                    b.Property<long>("MemberId")
                         .HasColumnType("bigint");
 
                     b.Property<bool>("RetrunStatus")
@@ -72,9 +72,9 @@ namespace Wpf_library.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RentedBookId");
+                    b.HasIndex("BookID");
 
-                    b.HasIndex("RentingMemberId");
+                    b.HasIndex("MemberId");
 
                     b.ToTable("BookTransactions");
                 });
@@ -182,11 +182,15 @@ namespace Wpf_library.EntityFramework.Migrations
                 {
                     b.HasOne("Wpf_library.Domain.Models.Book", "RentedBook")
                         .WithMany()
-                        .HasForeignKey("RentedBookId");
+                        .HasForeignKey("BookID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Wpf_library.Domain.Models.Member", "RentingMember")
                         .WithMany()
-                        .HasForeignKey("RentingMemberId");
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("RentedBook");
 

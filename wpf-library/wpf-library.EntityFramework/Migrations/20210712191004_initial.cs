@@ -87,8 +87,8 @@ namespace Wpf_library.EntityFramework.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RentedBookId = table.Column<long>(type: "bigint", nullable: true),
-                    RentingMemberId = table.Column<long>(type: "bigint", nullable: true),
+                    BookID = table.Column<long>(type: "bigint", nullable: false),
+                    MemberId = table.Column<long>(type: "bigint", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReturnDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     RetrunStatus = table.Column<bool>(type: "bit", nullable: false)
@@ -97,28 +97,28 @@ namespace Wpf_library.EntityFramework.Migrations
                 {
                     table.PrimaryKey("PK_BookTransactions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_BookTransactions_Books_RentedBookId",
-                        column: x => x.RentedBookId,
+                        name: "FK_BookTransactions_Books_BookID",
+                        column: x => x.BookID,
                         principalTable: "Books",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BookTransactions_Members_RentingMemberId",
-                        column: x => x.RentingMemberId,
+                        name: "FK_BookTransactions_Members_MemberId",
+                        column: x => x.MemberId,
                         principalTable: "Members",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookTransactions_RentedBookId",
+                name: "IX_BookTransactions_BookID",
                 table: "BookTransactions",
-                column: "RentedBookId");
+                column: "BookID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookTransactions_RentingMemberId",
+                name: "IX_BookTransactions_MemberId",
                 table: "BookTransactions",
-                column: "RentingMemberId");
+                column: "MemberId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
