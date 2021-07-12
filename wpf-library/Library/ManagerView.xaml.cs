@@ -54,6 +54,8 @@ namespace Library
 			TabControl_manager.SelectedItem = Tab_manager_books;
 			books = await bookService.GetAll();
 			bookGrid.ItemsSource = books;
+
+		//	var esss = from book in books where (book.Name == "yerlma") select book;//
 		}
 
 		private void btn_manager_cash_Click(object sender, RoutedEventArgs e)
@@ -119,7 +121,10 @@ namespace Library
 			e.Handled = regex.IsMatch(e.Text);
 		}
 
+        private void TabControl_manager_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }
 

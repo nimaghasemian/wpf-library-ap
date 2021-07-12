@@ -18,7 +18,7 @@
         <Button x:Name="btn_employee_editinfo" Grid.Column="0" Content="Edit info" Margin="26,273,27.2,95" FontSize="20" FontWeight="Bold" Click="btn_employee_editinfo_Click"/>
         <Button x:Name="btn_employee_exit" Grid.Column="0" Content="Exit" Margin="26,353,27.2,15" FontSize="20" FontWeight="Bold" Click="btn_employee_exit_Click"/>
 
-        <TabControl x:Name="TabControl_employee" Grid.Column="1" FontSize="20" FontFamily="Arial">
+        <TabControl x:Name="TabControl_employee" Grid.Column="1" FontSize="20" FontFamily="Arial" SelectionChanged="TabControl_employee_SelectionChanged">
             <TabItem x:Name="Tab_employee_welcom">
                 <Label Content="Welcome" HorizontalContentAlignment="Center" Margin="51,179,38.8,160" FontSize="40" FontWeight="Bold"/>
             </TabItem>
@@ -26,54 +26,25 @@
             <TabItem x:Name="Tab_employee_books">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height=".4*"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="0" Content="Borrowed" Margin="22,28,410.8,28.8" FontSize="20" FontFamily="Arial"/>
-                    <Button Grid.Row="0" Content="All Books" Margin="216,28,216.8,28.8" FontSize="20" FontFamily="Arial"/>
+                    <Button Grid.Row="0" Content="Borrowed" Margin="22,28,410.8,28.8" FontSize="20" FontFamily="Arial" Click="showBorrowedBooks"/>
                     <Button Grid.Row="0" Content="Available" Margin="412,28,20.8,28.8" FontSize="20" FontFamily="Arial"/>
+                    <DataGrid Name="bookGrid" HorizontalAlignment="Center" Height="278" Grid.Row="1" VerticalAlignment="Top" Width="567"/>
 
-                    <TabControl Grid.Row="1" Margin="50,20,50,20">
-                        <TabItem>
-                            <ScrollViewer>
-                                <ItemsControl>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
 
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
-                        <TabItem>
-                            <ScrollViewer Grid.Row="0">
-                                <ItemsControl>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
-                        <TabItem>
-                            <ScrollViewer Grid.Row="0">
-                                <ItemsControl>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
-                    </TabControl>
                 </Grid>
             </TabItem>
 
             <TabItem x:Name="Tab_employee_users">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="37*"/>
+                        <ColumnDefinition Width="564*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height=".4*"/>
                         <RowDefinition/>
@@ -81,52 +52,15 @@
                         <RowDefinition Height=".2*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="0" Content="Late persons" Margin="21,19,417.8,19.4" FontSize="20" FontFamily="Arial"/>
-                    <Button Grid.Row="0" Content="monthly subscribtion" Margin="209,19,196.8,19.4" FontSize="20" FontFamily="Arial"/>
-                    <Button Grid.Row="0" Content="All users" Margin="427,19,20.8,19.4" FontSize="20" FontFamily="Arial"/>
+                    <Button Grid.Row="0" Content="Late persons" Margin="19,19,411,20" FontSize="20" FontFamily="Arial" Grid.ColumnSpan="2" Grid.Column="1" />
+                    <Button Grid.Row="0" Content="monthly subscribtion" Margin="331,19,28,20" FontSize="20" FontFamily="Arial" Grid.Column="2" />
 
-                    <TabControl Grid.Row="1" Margin="50,20,50,20">
-                        <TabItem>
-                            <ScrollViewer>
-                                <ItemsControl>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
+                    <DataGrid SelectionMode="Single" Name="usersGrid" HorizontalAlignment="Left" Height="224" Margin="19,0,0,0" VerticalAlignment="Top" Width="562"  Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
 
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
-                        <TabItem>
-                            <ScrollViewer Grid.Row="0">
-                                <ItemsControl>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
+                    <Label Grid.Row="2" Content="Email:&#xD;&#xA;" Margin="106,10,391,9" FontSize="16" Grid.Column="2"/>
+                    <TextBox Name="userSearchInput" Grid.Row="2" Margin="173,13,161,9" Grid.Column="2"/>
 
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
-                        <TabItem>
-                            <ScrollViewer Grid.Row="0">
-                                <ItemsControl>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </TabItem>
-                    </TabControl>
-
-                    <Label Grid.Row="2" Content="Name" Margin="151,10.2,391.8,9.4" FontSize="16"/>
-                    <TextBox Grid.Row="2" Margin="218,13.2,161.8,9.4"/>
-                    <Label Grid.Row="2" Margin="448,13.2,9.8,9.4"/>
-
-                    <Button Grid.Row="3" Content="See info" Margin="170,5.6,292.8,4"/>
-                    <Button Grid.Row="3" Content="Chat" Margin="333,5.6,169.8,4"/>
+                    <Button Name="searchBtn" Grid.Row="2" Content="Find User" Margin="209,47,208,10" Grid.Column="2"  Grid.RowSpan="2"/>
                 </Grid>
             </TabItem>
 

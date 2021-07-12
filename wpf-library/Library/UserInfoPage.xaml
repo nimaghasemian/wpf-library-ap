@@ -1,0 +1,30 @@
+﻿<Window x:Class="Library.UserInfoPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="UserInfoPage" Height="510" Width="800">
+    <Grid>
+        <TextBox Name="nameInput"  HorizontalAlignment="Left" Height="30" Margin="129,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <TextBox Name="emailInput" HorizontalAlignment="Left" Height="30" Margin="129,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <TextBox Name="phoneInput" HorizontalAlignment="Left" Height="30" Margin="129,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <TextBox Name="joinDateInput" IsEnabled="False" HorizontalAlignment="Left" Height="30" Margin="129,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <TextBox Name="remainingDaysInput" IsEnabled="False" HorizontalAlignment="Left" Height="30" Margin="129,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="75,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="75,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="PhoneNumber:" HorizontalAlignment="Left" Margin="31,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="MemberShipDate" HorizontalAlignment="Left" Margin="21,231,0,0" VerticalAlignment="Top"/>
+        <Label Content="Remainig Days" HorizontalAlignment="Left" Margin="32,274,0,0" VerticalAlignment="Top"/>
+        <DataGrid Name="bookGrid" HorizontalAlignment="Left" Height="223" Margin="400,81,0,0" VerticalAlignment="Top" Width="377"/>
+        <GridSplitter HorizontalAlignment="Left" Height="474" Margin="360,0,0,0" VerticalAlignment="Center" Width="2"/>
+        <Label FontSize="25" Content="Member Info" HorizontalAlignment="Left" Margin="97,24,0,0" VerticalAlignment="Top" Width="199"/>
+        <Button Name="updateInfoBtn" FontSize="16" Padding="2,8,2,2" Content="Update Info&#xD;&#xA;" HorizontalAlignment="Left" Height="42" Margin="75,321,0,0" VerticalAlignment="Top" Width="203" Click="updateInfoBtn_Click"/>
+        <Label FontSize="25" Content="Borrowed Books" HorizontalAlignment="Left" Margin="489,24,0,0" VerticalAlignment="Top" Width="199"/>
+        <Button Name="showBooksBtn" FontSize="16" Padding="2,8,2,2" Content="Show Borrowed Books&#xA;" HorizontalAlignment="Left" Height="42" Margin="485,321,0,0" VerticalAlignment="Top" Width="203" Click="showBooksBtn_Click"/>
+        <Button Name="deleteBtn" FontSize="16" Padding="2,8,2,2" Content="Delete Account" HorizontalAlignment="Left" Height="41" Margin="485,383,0,0" VerticalAlignment="Top" Width="203" Click="deleteBtn_Click"/>
+        <Label Name="errorLabel" Foreground="Red" Content="" HorizontalAlignment="Left" Height="92" Margin="32,383,0,0" VerticalAlignment="Top" Width="294"/>
+
+    </Grid>
+</Window>

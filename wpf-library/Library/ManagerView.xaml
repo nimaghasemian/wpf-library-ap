@@ -17,9 +17,9 @@
         <Button x:Name="btn_manager_cash" Grid.Column="0" Content="Cash"  FontSize="24" FontWeight="Bold" Margin="28,230,27.4,124" Click="btn_manager_cash_Click"/>
         <Button x:Name="btn_manager_exit" Grid.Column="0" Content="Exit"  FontSize="24" FontWeight="Bold" Margin="28,327,27.4,27" Click="btn_manager_exit_Click"/>
 
-        <TabControl x:Name="TabControl_manager" Grid.Column="1">
+        <TabControl x:Name="TabControl_manager" Grid.Column="1" SelectionChanged="TabControl_manager_SelectionChanged">
             <TabItem x:Name="Tab_manager_welcom">
-                <Label Content="Welcom to managment part" Margin="50,168,43.6,169" FontSize="36"/>
+                <Label Content="Welcome to managment part" Margin="50,168,43.6,169" FontSize="36"/>
             </TabItem>
             <TabItem x:Name="Tab_manager_employee">
                 <Grid>
@@ -35,7 +35,7 @@
                     <DataGrid Name="empGrid" HorizontalAlignment="Left" Height="281" Margin="10,20,0,0" VerticalAlignment="Top" Width="537"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="Tab_manager_books">
+            <TabItem x:Name="Tab_manager_books" Height="6" Margin="-2,-2,-2,0" VerticalAlignment="Top">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
