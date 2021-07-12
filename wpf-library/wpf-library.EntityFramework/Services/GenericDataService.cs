@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Wpf_library.Domain.Services;
 using Wpf_library.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Wpf_library.EntityFramework.Services
 {
@@ -55,7 +56,7 @@ namespace Wpf_library.EntityFramework.Services
             using (WpfLibraryDBContext context = _contextFactory.CreateDbContext())
             {
 
-                IEnumerable<T> entities = await context.Set<T>().ToListAsync()  ;
+                IEnumerable<T> entities =  await context.Set<T>().ToListAsync();
                 return entities;
             }
         }
@@ -72,5 +73,7 @@ namespace Wpf_library.EntityFramework.Services
                 return entity;
             }
         }
+
+         
     }
 }

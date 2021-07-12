@@ -12,6 +12,7 @@ namespace Wpf_library.EntityFramework
             //setting up the options for connecting to the database using the entity framework
             var options = new DbContextOptionsBuilder();
             options.UseSqlServer("server=localhost\\SQLEXPRESS;Database=Library;Trusted_Connection=True;");
+
             return new WpfLibraryDBContext(options.Options);
         }
 

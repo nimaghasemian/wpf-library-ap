@@ -30,12 +30,13 @@ namespace Wpf_library.EntityFramework.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Balance = table.Column<long>(type: "bigint", nullable: false),
+                    Salary = table.Column<long>(type: "bigint", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    isLoggedIn = table.Column<bool>(type: "bit", nullable: false)
+                    isLoggedIn = table.Column<bool>(type: "bit", nullable: false),
+                    Balance = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -48,12 +49,12 @@ namespace Wpf_library.EntityFramework.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    LibBalance = table.Column<long>(type: "bigint", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    isLoggedIn = table.Column<bool>(type: "bit", nullable: false)
+                    isLoggedIn = table.Column<bool>(type: "bit", nullable: false),
+                    Balance = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,13 +68,13 @@ namespace Wpf_library.EntityFramework.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MemberShipDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Balance = table.Column<long>(type: "bigint", nullable: false),
                     LastPayDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    isLoggedIn = table.Column<bool>(type: "bit", nullable: false)
+                    isLoggedIn = table.Column<bool>(type: "bit", nullable: false),
+                    Balance = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -87,6 +88,7 @@ namespace Wpf_library.EntityFramework.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RentedBookId = table.Column<long>(type: "bigint", nullable: true),
+                    RentingMemberId = table.Column<long>(type: "bigint", nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReturnDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     RetrunStatus = table.Column<bool>(type: "bit", nullable: false)
@@ -100,12 +102,23 @@ namespace Wpf_library.EntityFramework.Migrations
                         principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_BookTransactions_Members_RentingMemberId",
+                        column: x => x.RentingMemberId,
+                        principalTable: "Members",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_BookTransactions_RentedBookId",
                 table: "BookTransactions",
                 column: "RentedBookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookTransactions_RentingMemberId",
+                table: "BookTransactions",
+                column: "RentingMemberId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -120,10 +133,10 @@ namespace Wpf_library.EntityFramework.Migrations
                 name: "Managers");
 
             migrationBuilder.DropTable(
-                name: "Members");
+                name: "Books");
 
             migrationBuilder.DropTable(
-                name: "Books");
+                name: "Members");
         }
     }
 }

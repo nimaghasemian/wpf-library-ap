@@ -11,9 +11,11 @@ namespace Wpf_library.ConsoleTest
         static  void Main(string[] args)
         {
             UserDataService<Manager> memberService = new UserDataService<Manager>(new WpfLibraryDbContextFactory());
-                
-       
 
+
+
+            
+            
         }
     }
 }

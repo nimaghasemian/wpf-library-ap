@@ -10,6 +10,7 @@ namespace Wpf_library.Domain.Models
     {
         public long Id { get; set; }
         public Book RentedBook { get; set; }
+        public Member RentingMember { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime ReturnDate { get; set; }
         public bool RetrunStatus { get; set; }// is the transaction finished?

@@ -10,7 +10,7 @@ using Wpf_library.EntityFramework;
 namespace Wpf_library.EntityFramework.Migrations
 {
     [DbContext(typeof(WpfLibraryDBContext))]
-    [Migration("20210709111201_initial")]
+    [Migration("20210712022452_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,6 +58,9 @@ namespace Wpf_library.EntityFramework.Migrations
                     b.Property<long?>("RentedBookId")
                         .HasColumnType("bigint");
 
+                    b.Property<long?>("RentingMemberId")
+                        .HasColumnType("bigint");
+
                     b.Property<bool>("RetrunStatus")
                         .HasColumnType("bit");
 
@@ -70,6 +73,8 @@ namespace Wpf_library.EntityFramework.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("RentedBookId");
+
+                    b.HasIndex("RentingMemberId");
 
                     b.ToTable("BookTransactions");
                 });
@@ -96,6 +101,9 @@ namespace Wpf_library.EntityFramework.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long>("Salary")
+                        .HasColumnType("bigint");
+
                     b.Property<bool>("isLoggedIn")
                         .HasColumnType("bit");
 
@@ -111,11 +119,11 @@ namespace Wpf_library.EntityFramework.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<long>("Balance")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("LibBalance")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -176,7 +184,13 @@ namespace Wpf_library.EntityFramework.Migrations
                         .WithMany()
                         .HasForeignKey("RentedBookId");
 
+                    b.HasOne("Wpf_library.Domain.Models.Member", "RentingMember")
+                        .WithMany()
+                        .HasForeignKey("RentingMemberId");
+
                     b.Navigation("RentedBook");
+
+                    b.Navigation("RentingMember");
                 });
 #pragma warning restore 612, 618
         }

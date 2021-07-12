@@ -14,7 +14,7 @@ namespace Library.Validators
             RuleFor(book => book.Author).SetValidator(new NameValidator());
             RuleFor(book => book.Genre).SetValidator(new NameValidator());
             RuleFor(book => book.ISBN).NotNull().WithMessage("ISBN is required")
-               .GreaterThan(999999999).WithMessage("enter a valid ISBN");//10 digit
+               .GreaterThan(999999).LessThan(100000).WithMessage("enter a valid ISBN");//6 digit
         }
     }
 }

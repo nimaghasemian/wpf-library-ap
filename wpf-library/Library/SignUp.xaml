@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="SignUp" Height="500" Width="483" ResizeMode="NoResize">
+        Title="SignUp" Height="600" Width="483" ResizeMode="NoResize">
     <Grid Margin="0,0,-20,0">
         <Label Content="SIGN UP" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="45" Height="65"/>
         <TextBox Name="nameInput" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="22" Margin="0,126,0,0" TextChanged="TextBox_TextChanged"/>
@@ -20,7 +20,7 @@
         <Label Content="Phone Number:" HorizontalAlignment="Left" Margin="33,267,0,0" VerticalAlignment="Top"/>
         <Button Name="ctnButton" Content="Continue to Payment" HorizontalAlignment="Center" Margin="0,316,0,0" VerticalAlignment="Top" Width="130" Height="30" Click="Button_Click_1"/>
         <Button Content="Back to Login" HorizontalAlignment="Center" Margin="0,358,0,0" VerticalAlignment="Top" Width="89" Click="Button_Click"/>
-        <Label Name="errorLabel" Foreground="Red" Content="" HorizontalAlignment="Center" Margin="0,397,0,0" VerticalAlignment="Top" Width="382" Height="67"/>
+        <Label Name="errorLabel" Foreground="Red" Content="" HorizontalAlignment="Center" Margin="0,397,0,0" VerticalAlignment="Top" Width="382" Height="125"/>
 
     </Grid>
 </Window>
