@@ -20,8 +20,8 @@ namespace Library
 
     public partial class CheckPasswordDialog : Window
     {
-        private Member currentMember;
-        public CheckPasswordDialog(Member currentUser)
+        private BasePerson currentMember;
+        public CheckPasswordDialog(BasePerson currentUser)
         {
             InitializeComponent();
             cnfrmBtn.IsEnabled = false;
@@ -40,6 +40,9 @@ namespace Library
         {
             if (passwordInput.Password.Length == 0)
                 cnfrmBtn.IsEnabled = false;
+            else
+                cnfrmBtn.IsEnabled = true;
+
         }
 
         private void ConfirmPassword(object sender, RoutedEventArgs e)

@@ -14,25 +14,30 @@
 
         <Button x:Name="btn_employee_books" Grid.Column="0" Content="Books" Margin="26,18,27.2,350" FontSize="20" FontWeight="Bold" Click="btn_employee_books_Click"/>
         <Button x:Name="btn_employee_users" Grid.Column="0" Content="Users" Margin="26,107,27.2,261" FontSize="20" FontWeight="Bold" Click="btn_employee_users_Click"/>
-        <Button x:Name="btn_employee_cart" Grid.Column="0" Content="My Cart" Margin="26,190,27.2,178" FontSize="20" FontWeight="Bold" Click="btn_employee_cart_Click"/>
-        <Button x:Name="btn_employee_editinfo" Grid.Column="0" Content="Edit info" Margin="26,273,27.2,95" FontSize="20" FontWeight="Bold" Click="btn_employee_editinfo_Click"/>
+        <Button x:Name="btn_employee_cart" Grid.Column="0" Content="My Account" Margin="26,190,27.2,178" FontSize="20" FontWeight="Bold" Click="btn_employee_cart_Click"/>
         <Button x:Name="btn_employee_exit" Grid.Column="0" Content="Exit" Margin="26,353,27.2,15" FontSize="20" FontWeight="Bold" Click="btn_employee_exit_Click"/>
 
         <TabControl x:Name="TabControl_employee" Grid.Column="1" FontSize="20" FontFamily="Arial" SelectionChanged="TabControl_employee_SelectionChanged">
             <TabItem x:Name="Tab_employee_welcom">
-                <Label Content="Welcome" HorizontalContentAlignment="Center" Margin="51,179,38.8,160" FontSize="40" FontWeight="Bold"/>
+                <Label Content="Welcome" HorizontalContentAlignment="Center" Margin="35,179,54,160" FontSize="40" FontWeight="Bold"/>
             </TabItem>
 
             <TabItem x:Name="Tab_employee_books">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="567*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="0" Content="Borrowed" Margin="22,28,410.8,28.8" FontSize="20" FontFamily="Arial" Click="showBorrowedBooks"/>
-                    <Button Grid.Row="0" Content="Available" Margin="412,28,20.8,28.8" FontSize="20" FontFamily="Arial"/>
-                    <DataGrid Name="bookGrid" HorizontalAlignment="Center" Height="278" Grid.Row="1" VerticalAlignment="Top" Width="567"/>
+                    <Button Grid.Row="1" Content="Borrowed" Margin="173,346,216,21" FontSize="17" FontFamily="Arial" Click="showBorrowedBooks_btn" Grid.Column="2"/>
+                    <Button Name="showAvailableBtn" Grid.Row="1" Content="Available" Margin="367,346,21,21" FontSize="17" FontFamily="Arial" Click="showAvailableBtn_Click" Grid.Column="2"/>
+                    <DataGrid Name="bookGrid" HorizontalAlignment="Left" Height="307" Grid.Row="1" VerticalAlignment="Top" Width="567" Margin="21,24,0,0" Grid.ColumnSpan="3"/>
+                    <Button Name="showAllBtn" Grid.Row="1" Content="All" Margin="21,346,410,21" FontSize="17" FontFamily="Arial" Click="showAllBtn_Click" Grid.ColumnSpan="3"/>
 
 
                 </Grid>
@@ -52,21 +57,34 @@
                         <RowDefinition Height=".2*"/>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="0" Content="Late persons" Margin="19,19,411,20" FontSize="20" FontFamily="Arial" Grid.ColumnSpan="2" Grid.Column="1" />
-                    <Button Grid.Row="0" Content="monthly subscribtion" Margin="331,19,28,20" FontSize="20" FontFamily="Arial" Grid.Column="2" />
+                    <Button Name="lateBtn" Grid.Row="0" Content="Late persons" Margin="19,19,411,20" FontSize="17" FontFamily="Arial" Grid.ColumnSpan="2" Grid.Column="1" Click="lateBtn_Click" />
+                    <Button Name="unsubBtn" Grid.Row="0" Content="unsubscribed" Margin="331,19,28,20" FontSize="20" FontFamily="Arial" Grid.Column="2" Click="unsubBtn_Click"/>
 
-                    <DataGrid SelectionMode="Single" Name="usersGrid" HorizontalAlignment="Left" Height="224" Margin="19,0,0,0" VerticalAlignment="Top" Width="562"  Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
+                    <DataGrid SelectionChanged="TabControl_employee_SelectionChanged" SelectionMode="Single" Name="usersGrid" HorizontalAlignment="Left" Height="224" Margin="19,0,0,0" VerticalAlignment="Top" Width="562"  Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1"/>
 
                     <Label Grid.Row="2" Content="Email:&#xD;&#xA;" Margin="106,10,391,9" FontSize="16" Grid.Column="2"/>
-                    <TextBox Name="userSearchInput" Grid.Row="2" Margin="173,13,161,9" Grid.Column="2"/>
+                    <TextBox TextChanged="userSearchInput_TextChanged" Name="userSearchInput" Grid.Row="2" Margin="173,13,161,9" Grid.Column="2" />
 
-                    <Button Name="searchBtn" Grid.Row="2" Content="Find User" Margin="209,47,208,10" Grid.Column="2"  Grid.RowSpan="2"/>
+                    <Button Name="searchBtn" Grid.Row="2" Content="Find User" Margin="209,47,208,10" Grid.Column="2"  Grid.RowSpan="2" Click="searchBtn_Click"/>
                 </Grid>
             </TabItem>
 
-            <TabItem x:Name="Tab_employee_cart">
-                <Label Content="You have totally ? $" HorizontalContentAlignment="Center" Margin="28,149,39.8,188" FontSize="35" FontWeight="Bold" FontFamily="Bauhaus 93"/>
+            <TabItem Name="Tab_employee_cart">
+                <Grid>
+                    <TextBox Name="nameInput"  HorizontalAlignment="Left" Height="30" Margin="224,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Grid.Column="1"/>
+                    <TextBox IsEnabled="False" Name="emailInput" HorizontalAlignment="Left" Height="30" Margin="224,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Grid.Column="1"/>
+                    <TextBox Name="phoneInput" HorizontalAlignment="Left" Height="30" Margin="225,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+                    <Label Name="nameLabel" Content="Name:" HorizontalAlignment="Left" Margin="78,81,0,0" VerticalAlignment="Top"/>
+                    <Label Name ="emailLabel" Content="Email:" HorizontalAlignment="Left" Margin="75,132,0,0" VerticalAlignment="Top"/>
+                    <Label Content="PhoneNumber:" HorizontalAlignment="Left" Margin="75,180,0,0" VerticalAlignment="Top"/>
+                    <Label FontSize="25" Content="Edit your information" HorizontalAlignment="Left" Margin="192,29,0,0" VerticalAlignment="Top" Width="246" Grid.Column="1"/>
+                    <Button Name="updateInfoBtn" FontSize="16" Padding="2,8,2,2" Content="Update Info&#xA;" HorizontalAlignment="Center" Height="42" Margin="0,284,0,0" VerticalAlignment="Top" Width="203" Click="updateInfoBtn_Click"/>
+                    <Label Content="Balance:" HorizontalAlignment="Left" Margin="78,229,0,0" VerticalAlignment="Top"/>
+                    <TextBox IsEnabled="False" Name="balanceEdt" Background="LightGreen" HorizontalAlignment="Left" Height="30" Margin="225,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Grid.Column="1"/>
+                    <Label Name="errorLabel" Content="" FontSize="15" Foreground="Red" HorizontalAlignment="Left" Height="54" Margin="84,344,0,0" VerticalAlignment="Top" Width="457"/>
+                </Grid>
             </TabItem>
         </TabControl>
+
     </Grid>
 </Window>

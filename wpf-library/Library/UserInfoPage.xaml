@@ -8,7 +8,7 @@
         Title="UserInfoPage" Height="510" Width="800">
     <Grid>
         <TextBox Name="nameInput"  HorizontalAlignment="Left" Height="30" Margin="129,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
-        <TextBox Name="emailInput" HorizontalAlignment="Left" Height="30" Margin="129,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <TextBox IsEnabled="False" Name="emailInput" HorizontalAlignment="Left" Height="30" Margin="129,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
         <TextBox Name="phoneInput" HorizontalAlignment="Left" Height="30" Margin="129,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
         <TextBox Name="joinDateInput" IsEnabled="False" HorizontalAlignment="Left" Height="30" Margin="129,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
         <TextBox Name="remainingDaysInput" IsEnabled="False" HorizontalAlignment="Left" Height="30" Margin="129,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>

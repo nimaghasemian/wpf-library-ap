@@ -64,6 +64,7 @@ namespace Library
                     {
                         newMember.Balance += 2000;
                         newMember.LastPayDate = DateTime.Now;
+                        newMember.MemberShipDate = DateTime.Now;
                         UserDataService<Member> userService = new UserDataService<Member>(new WpfLibraryDbContextFactory());
                         await userService.Create(newMember);
                         MessageBox.Show("You Signed Up Successfully. Please Login Now");

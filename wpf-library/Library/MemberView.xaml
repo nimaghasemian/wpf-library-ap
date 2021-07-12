@@ -16,7 +16,7 @@
             <Button x:Name="btn_user_allbooks" Grid.Column="0" Content="All Books" Margin="10,10,10.2,354" FontFamily="Arial" FontSize="22" FontWeight="Bold" Click="btn_user_allbooks_Click"/>
             <Button x:Name="btn_user_mybooks" Grid.Column="0" Content="My Books" Margin="10,77,10.2,287" FontFamily="Arial" FontSize="22" FontWeight="Bold" Click="btn_user_mybooks_Click"/>
             <Button x:Name="btn_user_subscribe" Grid.Column="0" Content="Subscribe" Margin="10,148,10.2,216" FontFamily="Arial" FontSize="22" FontWeight="Bold" Click="btn_user_subscribe_Click"/>
-            <Button x:Name="btn_user_cart" Grid.Column="0" Content="Cart" Margin="10,214,10.2,150" FontFamily="Arial" FontSize="22" FontWeight="Bold" Click="btn_user_cart_Click"/>
+            <Button x:Name="btn_user_cart" Grid.Column="0" Content="Credit Card" Margin="10,214,10.2,150" FontFamily="Arial" FontSize="22" FontWeight="Bold" Click="btn_user_cart_Click"/>
             <Button x:Name="btn_user_editinfo" Grid.Column="0" Content="Edit Info" Margin="10,284,10.2,80" FontFamily="Arial" FontSize="22" FontWeight="Bold" Click="btn_user_editinfo_Click"/>
             <Button x:Name="btn_user_exit" Grid.Column="0" Content="Exit" Margin="10,354,10.2,10" FontFamily="Arial" FontSize="22" FontWeight="Bold" Click="btn_user_exit_Click"/>
 

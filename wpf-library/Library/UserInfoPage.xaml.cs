@@ -38,7 +38,7 @@ namespace Library
             emailInput.Text = member.Email;
             phoneInput.Text = member.PhoneNumber;
             joinDateInput.Text = member.MemberShipDate.ToLongDateString();
-            remainingDaysInput.Text = (DateTime.Now - member.LastPayDate).Days.ToString();
+            remainingDaysInput.Text = ((DateTime.Now - member.LastPayDate).Days + 30).ToString();
             if(caller == member) {
                 deleteBtn.Visibility = Visibility.Collapsed;
             }else  {
@@ -94,10 +94,13 @@ namespace Library
                 Password = currentMember.Password
             };
 
-            MemberValidator validator = new MemberValidator();
-            var validationResult = await validator.ValidateAsync(updatedMember);
+            NameValidator validator = new NameValidator();
+            var nameValidationResult = validator.Validate(currentMember.Name);
 
-            if (validationResult.IsValid)
+            PhoneNumberValidator phoneValidator = new PhoneNumberValidator();
+            var phoneValidationResult = phoneValidator.Validate(currentMember.PhoneNumber);
+
+            if (phoneValidationResult.IsValid && nameValidationResult.IsValid)
             {
                 Window confirmPassDialog = new CheckPasswordDialog(currentMember);
                 bool? passwordConfirm = confirmPassDialog.ShowDialog();
@@ -113,7 +116,11 @@ namespace Library
 
             }
             else {
-                    foreach(var error in validationResult.Errors)
+                foreach (var error in nameValidationResult.Errors)
+                {
+                    errorLabel.Content += error.ErrorMessage + "\n";
+                }
+                foreach (var error in phoneValidationResult.Errors)
                 {
                     errorLabel.Content += error.ErrorMessage + "\n";
                 }

@@ -19,7 +19,7 @@
 
         <TabControl x:Name="TabControl_manager" Grid.Column="1" SelectionChanged="TabControl_manager_SelectionChanged">
             <TabItem x:Name="Tab_manager_welcom">
-                <Label Content="Welcome to managment part" Margin="50,168,43.6,169" FontSize="36"/>
+                <Label Content="Welcome Sir" Margin="168,168,178,169" FontSize="36"/>
             </TabItem>
             <TabItem x:Name="Tab_manager_employee">
                 <Grid>
