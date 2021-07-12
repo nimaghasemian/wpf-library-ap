@@ -7,7 +7,7 @@
         mc:Ignorable="d"
      
         Title="BilingPage" Height="450" Width="800">
-        
+
     <Grid>
 
 
@@ -16,20 +16,20 @@
 
 
 
-        <Label Content="Enter Your Card Information" HorizontalAlignment="Center" Margin="0,37,0,0" VerticalAlignment="Top" FontSize="40                "/>
-        <TextBox x:Name="cardNumberInput" HorizontalAlignment="Left" Margin="190,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" Height="34" TextChanged="TextBox_TextChanged" />
+        <Label Content="Enter Your Card Information" HorizontalAlignment="Center" Margin="0,37,0,0" VerticalAlignment="Top" FontSize="50" FontFamily="Arabic Typesetting"/>
+        <TextBox x:Name="cardNumberInput" HorizontalAlignment="Left" Margin="190,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="441" Height="26" TextChanged="TextBox_TextChanged" FontSize="14" />
         <Label Content="Card Number:" HorizontalAlignment="Left" Margin="92,133,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="cvvInput" HorizontalAlignment="Left" Margin="190,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="34"/>
+        <TextBox x:Name="cvvInput" HorizontalAlignment="Left" Margin="190,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="26" FontSize="14"/>
         <Label Content="CVV2:" HorizontalAlignment="Left" Margin="93,199,0,0" VerticalAlignment="Top"/>
         <Label Content="Amount:" HorizontalAlignment="Left" Margin="93,366,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="amountTextBox"  HorizontalAlignment="Left" Margin="190,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="32" IsEnabled="False" Background="LightGreen" Text="" Padding="4,2,2,2" FontSize="18"/>
-        <Button Content="Proceed" HorizontalAlignment="Left" Margin="620,360,0,0" VerticalAlignment="Top" Height="32" Width="130" Click="Button_Click_1"/>
-        <Label Content="Expiry:" HorizontalAlignment="Left" Margin="333,199,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="monthInput" HorizontalAlignment="Left" Margin="439,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="34" TextChanged="TextBox_TextChanged_1"/>
-        <TextBox x:Name="yearInput" HorizontalAlignment="Left" Margin="545,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="34" TextChanged="TextBox_TextChanged_2"/>
+        <Button Content="Proceed" HorizontalAlignment="Left" Margin="620,360,0,0" VerticalAlignment="Top" Height="32" Width="130" Click="Button_Click_1" FontSize="16" FontWeight="Bold" Background="#FF00FF28"/>
+        <Label Content="Expiry:" HorizontalAlignment="Left" Margin="333,198,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBox x:Name="monthInput" HorizontalAlignment="Left" Margin="442,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" Height="26" TextChanged="TextBox_TextChanged_1" FontSize="14"/>
+        <TextBox x:Name="yearInput" HorizontalAlignment="Left" Margin="544,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" Height="26" TextChanged="TextBox_TextChanged_2" FontSize="14"/>
         <Label Content="Month:" HorizontalAlignment="Left" Margin="390,199,0,0" VerticalAlignment="Top"/>
         <Label Content="Year:" HorizontalAlignment="Left" Margin="505,199,0,0" VerticalAlignment="Top"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="475,360,0,0" VerticalAlignment="Top" Width="130" Height="32" Click="Button_Click"/>
+        <Button Content="Cancel" BorderThickness="1.5" HorizontalAlignment="Left" Margin="475,360,0,0" VerticalAlignment="Top" Width="130" Height="32" Click="Button_Click" Background="{x:Null}"/>
         <Label  x:Name ="errorLabel" Content="" HorizontalAlignment="Center" Height="26" Margin="0,274,0,0" VerticalAlignment="Top" Width="588"/>
 
     </Grid>

@@ -6,20 +6,77 @@
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
         Title="ManagerView" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Sty-round_mainbtns" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="40" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".4*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btn_manager_employee" Grid.Column="0" Content="Employee"  FontSize="24" FontWeight="Bold" Margin="28,27,27.4,327" Click="btn_manager_employee_Click"/>
-        <Button x:Name="btn_manager_books" Grid.Column="0" Content="Books"  FontSize="24" FontWeight="Bold" Margin="28,129,27.4,225" Click="btn_manager_books_Click"/>
-        <Button x:Name="btn_manager_cash" Grid.Column="0" Content="Cash"  FontSize="24" FontWeight="Bold" Margin="28,230,27.4,124" Click="btn_manager_cash_Click"/>
-        <Button x:Name="btn_manager_exit" Grid.Column="0" Content="Exit"  FontSize="24" FontWeight="Bold" Margin="28,327,27.4,27" Click="btn_manager_exit_Click"/>
+        <Button Style="{DynamicResource Sty-round_mainbtns}" x:Name="btn_manager_employee" Grid.Column="0" Content="Employee"  FontSize="24" FontWeight="Bold" Margin="28,27,27.4,327" Click="btn_manager_employee_Click"/>
+        <Button x:Name="btn_manager_books" Grid.Column="0" Content="Books"  FontSize="24" FontWeight="Bold" Margin="28,129,27.4,225" Click="btn_manager_books_Click" Style="{DynamicResource Sty-round_mainbtns}"/>
+        <Button x:Name="btn_manager_cash" Grid.Column="0" Content="Cash"  FontSize="24" FontWeight="Bold" Margin="28,230,27.4,124" Click="btn_manager_cash_Click" Style="{DynamicResource Sty-round_mainbtns}"/>
+        <Button x:Name="btn_manager_exit" Grid.Column="0" Content="Exit"  FontSize="24" FontWeight="Bold" Margin="28,327,27.4,27" Click="btn_manager_exit_Click" Style="{DynamicResource Sty-round_mainbtns}"/>
 
         <TabControl x:Name="TabControl_manager" Grid.Column="1" SelectionChanged="TabControl_manager_SelectionChanged">
             <TabItem x:Name="Tab_manager_welcom">
-                <Label Content="Welcome to managment part" Margin="50,168,43.6,169" FontSize="36"/>
+                <Label Content="Welcome to managment part" Margin="20,168,9,169" FontSize="36" FontWeight="Bold"/>
             </TabItem>
             <TabItem x:Name="Tab_manager_employee">
                 <Grid>
@@ -30,8 +87,8 @@
 
 
 
-                    <Button x:Name="btn_manager_addemployee" Grid.Row="1" Content="Add new employee" Margin="76,16.4,276.6,20" Click="btn_manager_addemployee_Click"/>
-                    <Button Grid.Row="1" Content="Pay salaries" Margin="310,16.4,112.6,20"/>
+                    <Button x:Name="btn_manager_addemployee" Grid.Row="1" Content="Add new employee" Margin="76,16.4,276.6,20" Click="btn_manager_addemployee_Click" FontSize="16" Background="#FFDDDDDD"/>
+                    <Button Grid.Row="1" Content="Pay salaries" Margin="310,16.4,112.6,20" FontSize="16"/>
                     <DataGrid Name="empGrid" HorizontalAlignment="Left" Height="281" Margin="10,20,0,0" VerticalAlignment="Top" Width="537"/>
                 </Grid>
             </TabItem>
@@ -56,9 +113,9 @@
                     </Grid.RowDefinitions>
 
                     <Label Name="balanceDisplay" Grid.Row="0" Content="Your total money is ? $" HorizontalContentAlignment="Center" Margin="51,98,46.6,36" FontSize="36"/>
-                    <Label Grid.Row="1" Content="How much money" Margin="105,47,341.6,24.4"/>
-                    <TextBox PreviewTextInput="increaseInput_PreviewTextInput" Name="increaseInput" Grid.Row="1" Margin="225,47,132.6,24.4" FontSize="16" />
-                    <Button Name="payBtn" Grid.Row="2" Content="Pay&#xD;&#xA;" HorizontalContentAlignment="Center" Margin="169,14,209,40" Click="payBtn_Click"/>
+                    <Label Grid.Row="1" Content="How much money" VerticalContentAlignment="Center" Margin="105,53,341,24"/>
+                    <TextBox PreviewTextInput="increaseInput_PreviewTextInput" Name="increaseInput" Grid.Row="1" Margin="225,53,132,24" FontSize="15" />
+                    <Button Name="payBtn" Grid.Row="2" Content="Pay&#xD;&#xA;" Margin="169,14,209,40" Click="payBtn_Click" FontSize="20" FontWeight="Bold"/>
                     <Label Grid.Row="2" Margin="169,50.6,209.6,25"/>
                     <Label Name="amountErrorLabel" Foreground="Red" Content="" HorizontalAlignment="Left" Height="29" Margin="225,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="173" Grid.RowSpan="2"/>
                 </Grid>
